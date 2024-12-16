@@ -17,6 +17,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void savefile();
+
 private:
     Ui::MainWindow *ui;
 };
