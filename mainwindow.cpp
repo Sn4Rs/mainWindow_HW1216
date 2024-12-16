@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     connect(ui->actionSave,SIGNAL(triggered(bool)),this,SLOT(savefile()));
+    connect(ui->actionClose,SIGNAL(triggered(bool)),this,SLOT(close()));
 }
 
 MainWindow::~MainWindow()
@@ -31,6 +32,7 @@ void MainWindow::savefile()
     out<<ui->plainTextEdit->toPlainText();
     file.flush();
     file.close();
+    ui->plainTextEdit->setPlainText("Saved to "+filename);
 }
 
 
